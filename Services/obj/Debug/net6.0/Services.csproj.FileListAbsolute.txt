@@ -1,0 +1,17 @@
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Services.deps.json
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Services.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\ref\Services.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Services.pdb
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Contracts.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Entities.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Contracts.pdb
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Entities.pdb
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\ref\Services.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.pdb
