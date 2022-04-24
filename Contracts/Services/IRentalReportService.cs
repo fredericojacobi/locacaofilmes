@@ -5,14 +5,14 @@ namespace Contracts.Services;
 
 public interface IRentalReportService
 {
-    Task<Return<ClientDto>> OverdueClients();
+    Task<Return<OverdueClientDto>> OverdueClientsAsync();
     
-    Task<Return<MovieDto>> NeverRentedMovies();
+    Task<Return<MovieDto>> NeverRentedMoviesAsync();
 
-    Task<Return<MovieDto>> MostRentedMoviesLastYear(int listSize);
+    Task<Return<RentedMoviesDto>> MostRentedMoviesLastYearAsync(int top);
 
-    Task<Return<MovieDto>> LessRentedMoviesLastWeek(int listSize);
+    Task<Return<RentedMoviesDto>> LessRentedMoviesLastWeekAsync(int top);
 
-    Task<Return<ClientDto>> HighestMoviesRentedClient(int position);
+    Task<Return<ClientRentalDto>> HighestMoviesRentedClientAsync(int position);
 
 }

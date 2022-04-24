@@ -362,6 +362,9 @@
             "projectReferences": {
               "C:\\Users\\Frederico\\Documents\\Projetos\\LocacaoFilmes\\Contracts\\Contracts.csproj": {
                 "projectPath": "C:\\Users\\Frederico\\Documents\\Projetos\\LocacaoFilmes\\Contracts\\Contracts.csproj"
+              },
+              "C:\\Users\\Frederico\\Documents\\Projetos\\LocacaoFilmes\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Frederico\\Documents\\Projetos\\LocacaoFilmes\\Repository\\Repository.csproj"
               }
             }
           }

@@ -13,17 +13,17 @@ public class RentalController : ControllerBase
     public RentalController(IServiceWrapper service) => _service = service;
 
     [HttpGet("Consultar")]
-    public async Task<IActionResult> GetAsync() => Ok(await _service.Rental.Get());
+    public async Task<IActionResult> GetAsync() => Ok(await _service.Rental.GetAsync());
 
     [HttpGet("Consultar/{id}")]
-    public async Task<IActionResult> GetAsync([FromRoute] Guid id) => Ok(await _service.Rental.Get(id));
+    public async Task<IActionResult> GetAsync([FromRoute] Guid id) => Ok(await _service.Rental.GetAsync(id));
 
     [HttpPost("Cadastrar")]
-    public async Task<IActionResult> PostAsync([FromBody] PostRentalDto postRentalDto) => Ok(await _service.Rental.Post(postRentalDto));
+    public async Task<IActionResult> PostAsync([FromBody] PostRentalDto postRentalDto) => Ok(await _service.Rental.PostAsync(postRentalDto));
 
     [HttpPut("Atualizar")]
-    public async Task<IActionResult> PutAsync([FromBody] PostRentalDto rentalDto) => Ok(await _service.Rental.Put(rentalDto));
+    public async Task<IActionResult> PutAsync([FromBody] PostRentalDto rentalDto) => Ok(await _service.Rental.PutAsync(rentalDto));
 
     [HttpDelete("Excluir/{id}")]
-    public async Task<IActionResult> DeleteAsync([FromRoute] Guid id) => Ok(await _service.Rental.Delete(id));
+    public async Task<IActionResult> DeleteAsync([FromRoute] Guid id) => Ok(await _service.Rental.DeleteAsync(id));
 }

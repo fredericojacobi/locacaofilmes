@@ -386,7 +386,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "Contracts": "1.0.0"
+          "Contracts": "1.0.0",
+          "Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Services.dll": {}

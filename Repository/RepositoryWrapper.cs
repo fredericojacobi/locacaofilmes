@@ -18,7 +18,7 @@ public class RepositoryWrapper : IRepositoryWrapper
         _mapper = mapper;
     }
 
-    public IRentalRepository Rental => _rental ??= new RentalRepository(_context, _mapper);
+    public IRentalRepository Rental => _rental ??= new RentalRepository(_context);
     
     public IClientRepository Client => _client ??= new ClientRepository(_context);
     

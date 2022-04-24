@@ -21,12 +21,18 @@ public class Return<T> where T : class
 
     public void SetMessage()
     {
+        if (!string.IsNullOrWhiteSpace(Message)) return;
+        
         if (Ok)
+        {
             SetMessage(HttpStatusCode.OK);
+            return;
+        }
         
         if (!Records.Any())
         {
             SetMessage(HttpStatusCode.NotFound);
+            return;
         }
         
         SetMessage(HttpStatusCode.OK);
@@ -34,6 +40,8 @@ public class Return<T> where T : class
 
     public void SetMessage(string message, bool ok, HttpStatusCode statusCode)
     {
+        if (!string.IsNullOrWhiteSpace(Message)) return;
+
         Message = message;
         Code = (int)statusCode;
         Ok = ok;
@@ -41,6 +49,8 @@ public class Return<T> where T : class
     
     public void SetMessage(HttpStatusCode statusCode)
     {
+        if (!string.IsNullOrWhiteSpace(Message)) return;
+
         switch (statusCode)
         {
             case HttpStatusCode.NotFound:

@@ -8,6 +8,8 @@ public interface IMovieRepository : IRepositoryBase<Movie>
     
     Task<Movie?> ReadMovieAsync(Guid id);
     
+    Task<IList<Movie>> ReadMoviesNotInIdsAsync(List<Guid> ids);
+    
     Task<Movie> CreateMovieAsync(Movie movie);
     
     Task<Movie> UpdateMovieAsync(Movie movie);

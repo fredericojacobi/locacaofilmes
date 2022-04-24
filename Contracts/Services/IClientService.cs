@@ -5,13 +5,13 @@ namespace Contracts.Services;
 
 public interface IClientService
 {
-    Task<Return<ClientDto>> Get();
+    Task<Return<ClientDto>> GetAsync();
     
-    Task<Return<ClientDto>> Get(Guid id);
+    Task<Return<ClientDto>> GetAsync(Guid id);
     
-    Task<Return<ClientDto>> Post(PostClientDto postClientDto);
+    Task<Return<ClientDto>> PostAsync(PostClientDto postClientDto);
     
-    Task<Return<ClientDto>> Put(ClientDto clientDto);
+    Task<Return<ClientDto>> PutAsync(ClientDto clientDto);
     
-    Task<Return<ClientDto>> Delete(Guid id);
+    Task<Return<ClientDto>> DeleteAsync(Guid id);
 }

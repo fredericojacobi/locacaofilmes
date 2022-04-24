@@ -19,7 +19,7 @@ public class ClientService : IClientService
         _mapper = mapper;
     }
 
-    public async Task<Return<ClientDto>> Get()
+    public async Task<Return<ClientDto>> GetAsync()
     {
         var returnObj = new Return<ClientDto>();
 
@@ -37,7 +37,7 @@ public class ClientService : IClientService
         return returnObj;
     }
 
-    public async Task<Return<ClientDto>> Get(Guid id)
+    public async Task<Return<ClientDto>> GetAsync(Guid id)
     {
         var returnObj = new Return<ClientDto>();
 
@@ -55,7 +55,7 @@ public class ClientService : IClientService
         return returnObj;
     }
 
-    public async Task<Return<ClientDto>> Post(PostClientDto postClientDto)
+    public async Task<Return<ClientDto>> PostAsync(PostClientDto postClientDto)
     {
         var returnObj = new Return<ClientDto>();
         
@@ -74,7 +74,7 @@ public class ClientService : IClientService
         return returnObj;
     }
 
-    public async Task<Return<ClientDto>> Put(ClientDto clientDto)
+    public async Task<Return<ClientDto>> PutAsync(ClientDto clientDto)
     {
         var returnObj = new Return<ClientDto>();
 
@@ -93,7 +93,7 @@ public class ClientService : IClientService
         return returnObj;
     }
 
-    public async Task<Return<ClientDto>> Delete(Guid id)
+    public async Task<Return<ClientDto>> DeleteAsync(Guid id)
     {
         var returnObj = new Return<ClientDto>();
         

@@ -19,7 +19,7 @@ public class MovieService : IMovieService
         _mapper = mapper;
     }
 
-    public async Task<Return<MovieDto>> Get()
+    public async Task<Return<MovieDto>> GetAsync()
     {
         var returnObj = new Return<MovieDto>();
 
@@ -37,7 +37,7 @@ public class MovieService : IMovieService
         return returnObj;
     }
 
-    public async Task<Return<MovieDto>> Get(Guid id)
+    public async Task<Return<MovieDto>> GetAsync(Guid id)
     {
         var returnObj = new Return<MovieDto>();
 
@@ -55,7 +55,7 @@ public class MovieService : IMovieService
         return returnObj;
     }
 
-    public async Task<Return<MovieDto>> Post(PostMovieDto postMovieDto)
+    public async Task<Return<MovieDto>> PostAsync(PostMovieDto postMovieDto)
     {
         var returnObj = new Return<MovieDto>();
 
@@ -73,7 +73,7 @@ public class MovieService : IMovieService
         returnObj.SetMessage();
         return returnObj;    }
 
-    public async Task<Return<MovieDto>> Put(MovieDto movieDto)
+    public async Task<Return<MovieDto>> PutAsync(MovieDto movieDto)
     {
         var returnObj = new Return<MovieDto>();
 
@@ -92,7 +92,7 @@ public class MovieService : IMovieService
         return returnObj;
     }
 
-    public async Task<Return<MovieDto>> Delete(Guid id)
+    public async Task<Return<MovieDto>> DeleteAsync(Guid id)
     {
         var returnObj = new Return<MovieDto>();
         

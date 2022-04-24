@@ -5,13 +5,13 @@ namespace Contracts.Services;
 
 public interface IMovieService
 {
-    Task<Return<MovieDto>> Get();
+    Task<Return<MovieDto>> GetAsync();
     
-    Task<Return<MovieDto>> Get(Guid id);
+    Task<Return<MovieDto>> GetAsync(Guid id);
     
-    Task<Return<MovieDto>> Post(PostMovieDto postMovieDto);
+    Task<Return<MovieDto>> PostAsync(PostMovieDto postMovieDto);
     
-    Task<Return<MovieDto>> Put(MovieDto movieDto);
+    Task<Return<MovieDto>> PutAsync(MovieDto movieDto);
     
-    Task<Return<MovieDto>> Delete(Guid id);
+    Task<Return<MovieDto>> DeleteAsync(Guid id);
 }

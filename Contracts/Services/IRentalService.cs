@@ -5,13 +5,13 @@ namespace Contracts.Services;
 
 public interface IRentalService
 {
-    Task<Return<RentalDto>> Get();
+    Task<Return<RentalDto>> GetAsync();
     
-    Task<Return<RentalDto>> Get(Guid id);
+    Task<Return<RentalDto>> GetAsync(Guid id);
     
-    Task<Return<RentalDto>> Post(PostRentalDto postRentalDto);
+    Task<Return<RentalDto>> PostAsync(PostRentalDto postRentalDto);
     
-    Task<Return<RentalDto>> Put(PostRentalDto rentalDto);
+    Task<Return<RentalDto>> PutAsync(PostRentalDto rentalDto);
     
-    Task<Return<RentalDto>> Delete(Guid id);
+    Task<Return<RentalDto>> DeleteAsync(Guid id);
 }

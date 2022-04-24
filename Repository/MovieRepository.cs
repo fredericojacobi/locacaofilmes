@@ -13,6 +13,8 @@ public class MovieRepository : RepositoryBase<Movie>, IMovieRepository
     public async Task<IList<Movie>> ReadAllMoviesAsync() => await ReadAllAsync();
     
     public async Task<Movie?> ReadMovieAsync(Guid id) => await ReadByIdAsync(id);
+    
+    public async Task<IList<Movie>> ReadMoviesNotInIdsAsync(List<Guid> ids) => await ReadByConditionAsync(x => !ids.Contains(x.Id));
 
     public async Task<Movie> CreateMovieAsync(Movie movie) => await CreateAsync(movie);
 

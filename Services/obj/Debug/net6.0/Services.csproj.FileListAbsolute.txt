@@ -15,3 +15,7 @@ C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Se
 C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.dll
 C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\ref\Services.dll
 C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\obj\Debug\net6.0\Services.pdb
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Repository.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Repository.pdb
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Services\bin\Debug\net6.0\Infrastructure.pdb

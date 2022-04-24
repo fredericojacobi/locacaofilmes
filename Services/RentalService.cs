@@ -2,6 +2,7 @@
 using AutoMapper;
 using Contracts.Repositories;
 using Contracts.Services;
+using Entities.Constants;
 using Entities.DataTransferObjects;
 using Entities.Models;
 using Entities.Models.Generics;
@@ -19,7 +20,7 @@ public class RentalService : IRentalService
         _mapper = mapper;
     }
     
-    public async Task<Return<RentalDto>> Get()
+    public async Task<Return<RentalDto>> GetAsync()
     {
         var returnObj = new Return<RentalDto>();
 
@@ -37,7 +38,7 @@ public class RentalService : IRentalService
         return returnObj;
     }
 
-    public async Task<Return<RentalDto>> Get(Guid id)
+    public async Task<Return<RentalDto>> GetAsync(Guid id)
     {
         var returnObj = new Return<RentalDto>();
 
@@ -55,7 +56,7 @@ public class RentalService : IRentalService
         return returnObj;
     }
 
-    public async Task<Return<RentalDto>> Post(PostRentalDto postRentalDto)
+    public async Task<Return<RentalDto>> PostAsync(PostRentalDto postRentalDto)
     {
         var returnObj = new Return<RentalDto>();
 
@@ -65,7 +66,7 @@ public class RentalService : IRentalService
             var client = await _repository.Client.ReadClientAsync(rental.ClientId);
             if (client is null)
             {
-                returnObj.SetMessage("Cliente não encontrado.", false, HttpStatusCode.NotFound);
+                returnObj.SetMessage(Message.CLIENT_NOT_FOUND, false, HttpStatusCode.NotFound);
                 return returnObj;
             }
             
@@ -74,7 +75,7 @@ public class RentalService : IRentalService
                 rental.ReturnDate = movie.Release ? rental.RentDate.AddDays(2) : rental.ReturnDate.AddDays(3);
             else
             {
-                returnObj.SetMessage("Filme não encontrado.", false, HttpStatusCode.NotFound);
+                returnObj.SetMessage(Message.MOVIE_NOT_FOUND, false, HttpStatusCode.NotFound);
                 return returnObj;
             }
             
@@ -90,7 +91,7 @@ public class RentalService : IRentalService
         return returnObj;
     }
 
-    public async Task<Return<RentalDto>> Put(PostRentalDto postRentalDto)
+    public async Task<Return<RentalDto>> PutAsync(PostRentalDto postRentalDto)
     {
         var returnObj = new Return<RentalDto>();
 
@@ -99,7 +100,7 @@ public class RentalService : IRentalService
             var rental = _mapper.Map<Rental>(postRentalDto);
             if (!await _repository.Client.ClientExistsAsync(rental.ClientId))
             {
-                returnObj.SetMessage("Cliente não encontrado.", false, HttpStatusCode.NotFound);
+                returnObj.SetMessage(Message.CLIENT_NOT_FOUND, false, HttpStatusCode.NotFound);
                 return returnObj;
             }
             
@@ -108,7 +109,7 @@ public class RentalService : IRentalService
                 rental.ReturnDate = movie.Release ? rental.RentDate.AddDays(2) : rental.ReturnDate.AddDays(3);
             else
             {
-                returnObj.SetMessage("Filme não encontrado.", false, HttpStatusCode.NotFound);
+                returnObj.SetMessage(Message.MOVIE_NOT_FOUND, false, HttpStatusCode.NotFound);
                 return returnObj;
             }
             
@@ -124,7 +125,7 @@ public class RentalService : IRentalService
         return returnObj;
     }
 
-    public async Task<Return<RentalDto>> Delete(Guid id)
+    public async Task<Return<RentalDto>> DeleteAsync(Guid id)
     {
         var returnObj = new Return<RentalDto>();
         
