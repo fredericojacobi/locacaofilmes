@@ -17,8 +17,9 @@ public static class ServiceExtensions
         services.ConfigureDbContext(settings);
         services.ConfigureWrappers();
         services.ConfigureMappers();
+        services.ConfigureCors();
     }
-    
+
     public static void ConfigureDbContext(this IServiceCollection services, Settings settings)
     {
         var serverVersion = new MySqlServerVersion(new Version(8, 0, 28));
@@ -28,7 +29,7 @@ public static class ServiceExtensions
             options.EnableSensitiveDataLogging();
         });
     }
-    
+
     public static void ConfigureWrappers(this IServiceCollection services)
     {
         services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
@@ -44,5 +45,13 @@ public static class ServiceExtensions
             conf.AddProfile(new MovieProfile());
         });
         services.AddSingleton(mapperConfig.CreateMapper());
+    }
+
+    public static void ConfigureCors(this IServiceCollection services)
+    {
+        services.AddCors(options =>
+        {
+            options.AddPolicy("corsPolicy", b => b.WithOrigins("*"));
+        });
     }
 }

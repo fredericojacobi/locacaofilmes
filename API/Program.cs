@@ -17,6 +17,7 @@ Settings settings = config
     .GetRequiredSection("Settings")
     .Get<Settings>();
 
+
 builder.Services.Configure(settings);
 
 var app = builder.Build();
@@ -35,6 +36,8 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("corsPolicy");
 
 app.UseAuthorization();
 
