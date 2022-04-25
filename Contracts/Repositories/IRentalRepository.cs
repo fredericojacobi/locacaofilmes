@@ -18,7 +18,7 @@ public interface IRentalRepository : IRepositoryBase<Rental>
     
     Task<int> NumberOfClientRentals(Guid clientId);
     
-    Task<Rental?> ReadRentalAsync(Guid id);
+    Task<Rental?> ReadRentalAsync(Guid? id);
     
     Task<Rental> CreateRentalAsync(Rental rental);
 

@@ -6,7 +6,9 @@ public interface IMovieRepository : IRepositoryBase<Movie>
 {
     Task<IList<Movie>> ReadAllMoviesAsync();
     
-    Task<Movie?> ReadMovieAsync(Guid id);
+    Task<Movie?> ReadMovieByIdAsync(Guid id);
+    
+    Task<IList<Movie>> ReadMovieByTitleAsync(string title);
     
     Task<IList<Movie>> ReadMoviesNotInIdsAsync(List<Guid> ids);
     

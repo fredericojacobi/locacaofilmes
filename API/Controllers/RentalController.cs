@@ -18,6 +18,9 @@ public class RentalController : ControllerBase
     [HttpGet("Consultar/{id}")]
     public async Task<IActionResult> GetAsync([FromRoute] Guid id) => Ok(await _service.Rental.GetAsync(id));
 
+    [HttpGet("new")]
+    public async Task<IActionResult> GetNewPageAsync() => Ok(await _service.Rental.GetNewPageAsync());
+
     [HttpPost("Cadastrar")]
     public async Task<IActionResult> PostAsync([FromBody] PostRentalDto postRentalDto) => Ok(await _service.Rental.PostAsync(postRentalDto));
 

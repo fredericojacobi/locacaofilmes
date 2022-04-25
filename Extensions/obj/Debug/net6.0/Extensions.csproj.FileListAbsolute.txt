@@ -21,3 +21,9 @@ C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\obj\Debug\net6.0\
 C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\obj\Debug\net6.0\Extensions.dll
 C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\obj\Debug\net6.0\ref\Extensions.dll
 C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\obj\Debug\net6.0\Extensions.pdb
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\bin\Debug\net6.0\Microsoft.AspNetCore.Cors.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\bin\Debug\net6.0\Microsoft.Extensions.Features.dll
+C:\Users\Frederico\Documents\Projetos\LocacaoFilmes\Extensions\bin\Debug\net6.0\System.IO.Pipelines.dll

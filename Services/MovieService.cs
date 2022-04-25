@@ -19,14 +19,19 @@ public class MovieService : IMovieService
         _mapper = mapper;
     }
 
-    public async Task<Return<MovieDto>> GetAsync()
+    public async Task<Return<MovieDto>> GetAsync(string? title)
     {
         var returnObj = new Return<MovieDto>();
-
         try
         {
-            var result = await _repository.Movie.ReadAllMoviesAsync();
-            returnObj.Records = _mapper.Map<List<MovieDto>>(result);
+            var result = new List<Movie>(); 
+            
+            if (string.IsNullOrWhiteSpace(title))
+                result = await _repository.Movie.ReadAllMoviesAsync() as List<Movie>;
+            else
+                result = await _repository.Movie.ReadMovieByTitleAsync(title) as List<Movie>;
+            
+            returnObj.Records.AddRange(_mapper.Map<List<MovieDto>>(result));
         }
         catch
         {
@@ -37,13 +42,13 @@ public class MovieService : IMovieService
         return returnObj;
     }
 
-    public async Task<Return<MovieDto>> GetAsync(Guid id)
+    public async Task<Return<MovieDto>> GetByIdAsync(Guid id)
     {
         var returnObj = new Return<MovieDto>();
 
         try
         {
-            var result = await _repository.Movie.ReadMovieAsync(id);
+            var result = await _repository.Movie.ReadMovieByIdAsync(id);
             returnObj.Records.Add(_mapper.Map<MovieDto>(result));
         }
         catch
@@ -71,7 +76,8 @@ public class MovieService : IMovieService
         }
         
         returnObj.SetMessage();
-        return returnObj;    }
+        return returnObj;
+    }
 
     public async Task<Return<MovieDto>> PutAsync(MovieDto movieDto)
     {

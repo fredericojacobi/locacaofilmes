@@ -6,5 +6,5 @@ public class OverdueClientDto
     
     public MovieDto Movie { get; set; }
     
-    public DateTime ReturnDate { get; set; }
+    public string ReturnDate { get; set; }
 }

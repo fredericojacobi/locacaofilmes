@@ -6,5 +6,5 @@ public class PostRentalDto
     
     public Guid MovieId { get; set; }
     
-    public DateTime RentDate { get; set; }
+    public string RentDate { get; set; }
 }

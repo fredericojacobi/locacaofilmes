@@ -55,7 +55,7 @@ public class RentalRepository : RepositoryBase<Rental>, IRentalRepository
         return number.Count;
     }
 
-    public async Task<Rental?> ReadRentalAsync(Guid id) => await ReadByIdAsync(id, x => x.Client, x => x.Movie);
+    public async Task<Rental?> ReadRentalAsync(Guid? id) => await ReadByIdAsync(id.GetValueOrDefault(), x => x.Client, x => x.Movie);
 
     public async Task<Rental> CreateRentalAsync(Rental rental) => await CreateAsync(rental);
 

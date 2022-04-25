@@ -56,6 +56,32 @@ public class RentalService : IRentalService
         return returnObj;
     }
 
+    public async Task<Return<NewRentalDto>> GetNewPageAsync()
+    {
+        var returnObj = new Return<NewRentalDto>();
+
+        try
+        {
+            var clients = await _repository.Client.ReadAllClientsAsync();
+            var movies = await _repository.Movie.ReadAllMoviesAsync();
+
+            var newRentalDto = new NewRentalDto
+            {
+                Clients = _mapper.Map<List<ClientDto>>(clients),
+                Movies = _mapper.Map<List<MovieDto>>(movies)
+            };
+
+            returnObj.Records.Add(newRentalDto);
+        }
+        catch
+        {
+            returnObj.SetMessage(HttpStatusCode.InternalServerError);
+        }
+        
+        returnObj.SetMessage();
+        return returnObj;
+    }
+
     public async Task<Return<RentalDto>> PostAsync(PostRentalDto postRentalDto)
     {
         var returnObj = new Return<RentalDto>();
@@ -70,7 +96,7 @@ public class RentalService : IRentalService
                 return returnObj;
             }
             
-            var movie = await _repository.Movie.ReadMovieAsync(rental.MovieId);
+            var movie = await _repository.Movie.ReadMovieByIdAsync(rental.MovieId);
             if (movie is not null)
                 rental.ReturnDate = movie.Release ? rental.RentDate.AddDays(2) : rental.ReturnDate.AddDays(3);
             else
@@ -104,7 +130,7 @@ public class RentalService : IRentalService
                 return returnObj;
             }
             
-            var movie = await _repository.Movie.ReadMovieAsync(rental.MovieId);
+            var movie = await _repository.Movie.ReadMovieByIdAsync(rental.MovieId);
             if (movie is not null)
                 rental.ReturnDate = movie.Release ? rental.RentDate.AddDays(2) : rental.ReturnDate.AddDays(3);
             else

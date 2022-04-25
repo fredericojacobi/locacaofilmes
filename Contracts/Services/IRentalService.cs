@@ -9,6 +9,8 @@ public interface IRentalService
     
     Task<Return<RentalDto>> GetAsync(Guid id);
     
+    Task<Return<NewRentalDto>> GetNewPageAsync();
+    
     Task<Return<RentalDto>> PostAsync(PostRentalDto postRentalDto);
     
     Task<Return<RentalDto>> PutAsync(PostRentalDto rentalDto);

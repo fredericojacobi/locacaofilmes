@@ -44,7 +44,7 @@ public class ClientService : IClientService
         try
         {
             var result = await _repository.Client.ReadClientAsync(id);
-            returnObj.Records = _mapper.Map<List<ClientDto>>(result ?? new Client());
+            returnObj.Records.Add(_mapper.Map<ClientDto>(result));
         }
         catch
         {

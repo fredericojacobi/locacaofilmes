@@ -147,7 +147,7 @@ public class RentalReportService : IRentalReportService
         foreach (var movieId in lessRentedMoviesLastWeek)
         {
             var numberOfRentals = await _repository.Rental.NumberOfMovieRentals(movieId);
-            var movie = await _repository.Movie.ReadMovieAsync(movieId);
+            var movie = await _repository.Movie.ReadMovieByIdAsync(movieId);
             movies.Add(
                 new RentedMoviesDto(
                     lessRentedMoviesLastWeek.IndexOf(movieId) + 1,

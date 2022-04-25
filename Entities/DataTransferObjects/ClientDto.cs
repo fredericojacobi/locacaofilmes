@@ -8,5 +8,5 @@ public class ClientDto
     
     public string Cpf { get; set; }
     
-    public DateTime Birthday{ get; set; }
+    public string Birthday{ get; set; }
 }
