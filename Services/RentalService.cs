@@ -98,7 +98,7 @@ public class RentalService : IRentalService
             
             var movie = await _repository.Movie.ReadMovieByIdAsync(rental.MovieId);
             if (movie is not null)
-                rental.ReturnDate = movie.Release ? rental.RentDate.AddDays(2) : rental.ReturnDate.AddDays(3);
+                rental.ReturnDate = movie.Release ? rental.RentDate.AddDays(2) : rental.RentDate.AddDays(3);
             else
             {
                 returnObj.SetMessage(Message.MOVIE_NOT_FOUND, false, HttpStatusCode.NotFound);
